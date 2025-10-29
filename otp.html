@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify OTP - Obecno</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="master-page">
+        <div class="body">
+            <div class="wrapper">
+                <div class="otp-section">
+                    <div class="otp-container">
+                        <div class="otp-box">
+                            <!-- Logo -->
+                            <div class="logo-container">
+                                <img src="assets/logo.svg" alt="Obecno Logo" class="logo">
+                            </div>
+                            
+                            <!-- Header section -->
+                            <div class="header-section">
+                                <h2 class="otp-title">Verify OTP</h2>
+                                <p class="otp-description">Enter code we've sent to your<br>[Email address/phone]</p>
+                            </div>
+                            
+                            <!-- OTP form -->
+                            <div class="form-section">
+                                <!-- OTP Input Fields -->
+                                <div class="otp-inputs">
+                                    <input type="text" class="otp-input" maxlength="1" data-index="0" autocomplete="off">
+                                    <input type="text" class="otp-input" maxlength="1" data-index="1" autocomplete="off">
+                                    <input type="text" class="otp-input" maxlength="1" data-index="2" autocomplete="off">
+                                    <input type="text" class="otp-input" maxlength="1" data-index="3" autocomplete="off">
+                                    <input type="text" class="otp-input" maxlength="1" data-index="4" autocomplete="off">
+                                    <input type="text" class="otp-input" maxlength="1" data-index="5" autocomplete="off">
+                                </div>
+                                
+                                <!-- Verify Button -->
+                                <button class="verify-button" id="verify-button" disabled>
+                                    <span class="button-text">Verify</span>
+                                </button>
+                                
+                                <!-- Resend section -->
+                                <div class="resend-section">
+                                    <span class="resend-text">Didn't get the code?</span>
+                                    <button class="resend-button">
+                                        <span class="button-text">Resend it</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Go back button -->
+                        <div class="go-back-section">
+                            <button class="go-back-button">
+                                <i class="fas fa-arrow-left"></i>
+                                <span class="button-text">Go back</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // OTP input handling
+        const otpInputs = document.querySelectorAll('.otp-input');
+        const verifyButton = document.getElementById('verify-button');
+
+        // Auto-focus and navigation between OTP inputs
+        otpInputs.forEach((input, index) => {
+            input.addEventListener('input', function(e) {
+                const value = e.target.value;
+                
+                // Only allow numbers
+                if (!/^\d$/.test(value)) {
+                    e.target.value = '';
+                    return;
+                }
+                
+                // Move to next input if current has value
+                if (value && index < otpInputs.length - 1) {
+                    otpInputs[index + 1].focus();
+                }
+                
+                // Check if all inputs are filled
+                checkOTPComplete();
+            });
+            
+            input.addEventListener('keydown', function(e) {
+                // Handle backspace
+                if (e.key === 'Backspace' && !e.target.value && index > 0) {
+                    otpInputs[index - 1].focus();
+                }
+                
+                // Handle arrow keys
+                if (e.key === 'ArrowLeft' && index > 0) {
+                    otpInputs[index - 1].focus();
+                }
+                if (e.key === 'ArrowRight' && index < otpInputs.length - 1) {
+                    otpInputs[index + 1].focus();
+                }
+            });
+            
+            input.addEventListener('paste', function(e) {
+                e.preventDefault();
+                const pastedData = e.clipboardData.getData('text').replace(/\D/g, '').slice(0, 6);
+                
+                // Fill inputs with pasted data
+                pastedData.split('').forEach((digit, i) => {
+                    if (otpInputs[i]) {
+                        otpInputs[i].value = digit;
+                    }
+                });
+                
+                // Focus the next empty input or the last one
+                const nextEmptyIndex = pastedData.length < otpInputs.length ? pastedData.length : otpInputs.length - 1;
+                otpInputs[nextEmptyIndex].focus();
+                
+                checkOTPComplete();
+            });
+        });
+        
+        // Check if all OTP inputs are filled
+        function checkOTPComplete() {
+            const allFilled = Array.from(otpInputs).every(input => input.value);
+            verifyButton.disabled = !allFilled;
+        }
+        
+        // Verify button click
+        verifyButton.addEventListener('click', function() {
+            const otpCode = Array.from(otpInputs).map(input => input.value).join('');
+            console.log('Verifying OTP:', otpCode);
+            
+            // Simulate verification
+            if (otpCode.length === 6) {
+                // Here you would typically send the OTP to your backend
+                alert('OTP verified successfully!');
+            }
+        });
+        
+        // Resend button
+        const resendButton = document.querySelector('.resend-button');
+        resendButton.addEventListener('click', function() {
+            console.log('Resending OTP...');
+            
+            // Clear all inputs
+            otpInputs.forEach(input => {
+                input.value = '';
+            });
+            
+            // Focus first input
+            otpInputs[0].focus();
+            
+            // Disable verify button
+            verifyButton.disabled = true;
+            
+            // Here you would typically trigger OTP resend
+            alert('OTP has been resent!');
+        });
+        
+        // Go back button
+        const goBackButton = document.querySelector('.go-back-button');
+        goBackButton.addEventListener('click', function() {
+            window.location.href = 'password.html';
+        });
+        
+        // Focus first input on page load
+        window.addEventListener('load', function() {
+            otpInputs[0].focus();
+        });
+    </script>
+</body>
+</html>

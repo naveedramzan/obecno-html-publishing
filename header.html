@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header - Obecno</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="header-container">
+        <div class="header">
+            <div class="header-wrapper">
+                
+                
+                <!-- Left Section - Logo -->
+                <div class="header-left">
+                   <!-- Mobile Menu Button -->
+                <div class="mobile-menu-button">
+                    <button class="hamburger-btn" aria-label="Toggle mobile menu">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                </div>
+                
+                    <div class="logo-section">
+                        <img src="assets/Horizontal-Logo.svg" alt="Obecno Logo" class="header-logo">
+                    </div>
+                   
+                </div>
+
+                <!-- Center Section - Navigation Menu -->
+                <div class="header-center">
+                    <nav class="navigation-menu">
+                        <div class="menu-item active">
+                            <span class="menu-text">Overview</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="menu-text">Offices & Locations</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="menu-text">Employees</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="menu-text">Reports</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="menu-text">Settings</span>
+                        </div>
+                    </nav>
+                </div>
+                
+                <!-- Right Section - Actions -->
+                <div class="header-right">
+                    <button class="action-button add-button">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    
+                    <div class="notifications-section">
+                        <button class="action-button notification-button">
+                            <i class="fas fa-bell"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="user-profile">
+                        <div class="user-avatar">
+                            <img src="assets/avatars/userimage.png" alt="User Avatar" class="avatar-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Slide-in Menu -->
+        <div class="mobile-menu-overlay"></div>
+        <div class="mobile-menu">
+            <div class="mobile-menu-header">
+               
+                <button class="mobile-menu-close" aria-label="Close mobile menu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="mobile-navigation">
+                <div class="mobile-menu-item active">
+                    <span class="mobile-menu-text">Overview</span>
+                    <i class="fas fa-chevron-right mobile-menu-arrow"></i>
+                </div>
+                <div class="mobile-menu-item">
+                    <span class="mobile-menu-text">Offices & Locations</span>
+                    <i class="fas fa-chevron-right mobile-menu-arrow"></i>
+                </div>
+                <div class="mobile-menu-item">
+                    <span class="mobile-menu-text">Employees</span>
+                    <i class="fas fa-chevron-right mobile-menu-arrow"></i>
+                </div>
+                <div class="mobile-menu-item">
+                    <span class="mobile-menu-text">Reports</span>
+                    <i class="fas fa-chevron-right mobile-menu-arrow"></i>
+                </div>
+                <div class="mobile-menu-item">
+                    <span class="mobile-menu-text">Settings</span>
+                    <i class="fas fa-chevron-right mobile-menu-arrow"></i>
+                </div>
+            </nav>
+        </div>
+        
+        <!-- Body Content -->
+        <div class="body-content">
+            <div class="content-wrapper">
+                <div class="dashboard-section">
+                    <div class="dashboard-content">
+                        <!-- Dashboard content will go here -->
+                        <h1>Dashboard Content</h1>
+                        <p>This is where the main dashboard content will be displayed.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Navigation menu functionality
+        const menuItems = document.querySelectorAll('.menu-item');
+        
+        menuItems.forEach(item => {
+            item.addEventListener('click', function() {
+                // Remove active class from all items
+                menuItems.forEach(menuItem => menuItem.classList.remove('active'));
+                
+                // Add active class to clicked item
+                this.classList.add('active');
+                
+                // Get the menu text for navigation
+                const menuText = this.querySelector('.menu-text').textContent;
+                console.log('Navigating to:', menuText);
+            });
+        });
+
+        // Action buttons functionality
+        const addButton = document.querySelector('.add-button');
+        const notificationButton = document.querySelector('.notification-button');
+        
+        addButton.addEventListener('click', function() {
+            console.log('Add button clicked');
+            // Add functionality here
+        });
+        
+        notificationButton.addEventListener('click', function() {
+            console.log('Notification button clicked');
+            // Notification functionality here
+        });
+
+        // User profile functionality
+        const userProfile = document.querySelector('.user-profile');
+        
+        userProfile.addEventListener('click', function() {
+            console.log('User profile clicked');
+            // User profile dropdown functionality here
+        });
+
+        // Mobile menu functionality
+        const hamburgerBtn = document.querySelector('.hamburger-btn');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+        const mobileMenuClose = document.querySelector('.mobile-menu-close');
+        const mobileMenuItems = document.querySelectorAll('.mobile-menu-item');
+
+        // Toggle mobile menu
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('active');
+            mobileMenuOverlay.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+            
+            // Animate hamburger button
+            hamburgerBtn.classList.toggle('active');
+        }
+
+        // Close mobile menu
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('active');
+            mobileMenuOverlay.classList.remove('active');
+            document.body.classList.remove('menu-open');
+            hamburgerBtn.classList.remove('active');
+        }
+
+        // Event listeners for mobile menu
+        hamburgerBtn.addEventListener('click', toggleMobileMenu);
+        hamburgerBtn.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            toggleMobileMenu();
+        });
+        
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+        mobileMenuClose.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            closeMobileMenu();
+        });
+        
+        mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+        mobileMenuOverlay.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            closeMobileMenu();
+        });
+
+        // Mobile menu item clicks
+        mobileMenuItems.forEach(item => {
+            const handleItemClick = function() {
+                // Remove active class from all mobile menu items
+                mobileMenuItems.forEach(menuItem => menuItem.classList.remove('active'));
+                
+                // Add active class to clicked item
+                this.classList.add('active');
+                
+                // Update desktop menu as well
+                const menuText = this.querySelector('.mobile-menu-text').textContent;
+                menuItems.forEach(desktopItem => {
+                    if (desktopItem.querySelector('.menu-text').textContent === menuText) {
+                        menuItems.forEach(item => item.classList.remove('active'));
+                        desktopItem.classList.add('active');
+                    }
+                });
+                
+                // Close mobile menu after selection
+                closeMobileMenu();
+                
+                console.log('Mobile navigation to:', menuText);
+            };
+            
+            item.addEventListener('click', handleItemClick);
+            item.addEventListener('touchend', function(e) {
+                e.preventDefault();
+                handleItemClick.call(this);
+            });
+        });
+
+        // Close mobile menu on escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                closeMobileMenu();
+            }
+        });
+
+        console.log('Header component loaded');
+    </script>
+</body>
+</html>

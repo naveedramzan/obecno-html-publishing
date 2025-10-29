@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Obecno</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Arvo:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="signup-page">
+        <div class="body">
+            <div class="wrapper">
+                <div class="signup-section">
+                    <div class="signup-container">
+                        <div class="signup-form">
+                            <div class="form-content">
+                                <!-- Logo -->
+                                <div class="logo-container">
+                                    <img src="assets/signup-logo.svg" alt="Obecno Logo" class="logo">
+                                </div>
+                                
+                                <!-- Header section -->
+                                <div class="header-section">
+                                    <h2 class="signup-title">Let's verify your account</h2>
+                                    <p class="signup-description">Enter code we've sent to your [Email address/phone]</p>
+                                </div>
+                                
+                                <!-- OTP Input Fields -->
+                                <div class="otp-inputs">
+                                    <input type="text" class="otp-input" maxlength="1" data-index="0" autocomplete="off">
+                                    <input type="text" class="otp-input" maxlength="1" data-index="1" autocomplete="off">
+                                    <input type="text" class="otp-input" maxlength="1" data-index="2" autocomplete="off">
+                                    <input type="text" class="otp-input" maxlength="1" data-index="3" autocomplete="off">
+                                    <input type="text" class="otp-input" maxlength="1" data-index="4" autocomplete="off">
+                                    <input type="text" class="otp-input" maxlength="1" data-index="5" autocomplete="off">
+                                </div>
+                                
+                                <!-- Continue Button -->
+                                <button class="continue-button" id="continue-button" disabled>
+                                    <span class="button-text">Continue</span>
+                                </button>
+                                
+                                <!-- Need Help Section -->
+                                <div class="help-section">
+                                    <span class="help-text">Need help?</span>
+                                    <a href="#" class="contact-support-link">Contact Support</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Promotion Graphics -->
+                        <div class="promotion-graphics">
+                            <div class="promotion-content">
+                                <h2 class="promotion-title">Attendance Simplified</h2>
+                                <p class="promotion-description">Track attendance across all locations or remote teams in one clear, organized view.</p>
+                                <div class="phone-mockup">
+                                    <img src="assets/phone-image-updated-56586a.png" alt="Obecno App Preview" class="phone-image">
+                                </div>
+                                <p class="app-availability">Apps Available on Apple & Android Devices</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // OTP input handling
+        const otpInputs = document.querySelectorAll('.otp-input');
+        const continueButton = document.getElementById('continue-button');
+
+        // Auto-focus and navigation between OTP inputs
+        otpInputs.forEach((input, index) => {
+            input.addEventListener('input', function(e) {
+                const value = e.target.value;
+                
+                // Only allow numbers
+                if (!/^\d$/.test(value)) {
+                    e.target.value = '';
+                    return;
+                }
+                
+                // Move to next input if current has value
+                if (value && index < otpInputs.length - 1) {
+                    otpInputs[index + 1].focus();
+                }
+                
+                // Check if all inputs are filled
+                checkOTPComplete();
+            });
+            
+            input.addEventListener('keydown', function(e) {
+                // Handle backspace
+                if (e.key === 'Backspace' && !e.target.value && index > 0) {
+                    otpInputs[index - 1].focus();
+                }
+                
+                // Handle arrow keys
+                if (e.key === 'ArrowLeft' && index > 0) {
+                    otpInputs[index - 1].focus();
+                }
+                if (e.key === 'ArrowRight' && index < otpInputs.length - 1) {
+                    otpInputs[index + 1].focus();
+                }
+            });
+            
+            input.addEventListener('paste', function(e) {
+                e.preventDefault();
+                const pastedData = e.clipboardData.getData('text').replace(/\D/g, '').slice(0, 6);
+                
+                // Fill inputs with pasted data
+                pastedData.split('').forEach((digit, i) => {
+                    if (otpInputs[i]) {
+                        otpInputs[i].value = digit;
+                    }
+                });
+                
+                // Focus the next empty input or the last one
+                const nextEmptyIndex = pastedData.length < otpInputs.length ? pastedData.length : otpInputs.length - 1;
+                otpInputs[nextEmptyIndex].focus();
+                
+                checkOTPComplete();
+            });
+        });
+        
+        // Check if all OTP inputs are filled
+        function checkOTPComplete() {
+            const allFilled = Array.from(otpInputs).every(input => input.value);
+            continueButton.disabled = !allFilled;
+        }
+        
+        // Continue button click
+        continueButton.addEventListener('click', function() {
+            const otpCode = Array.from(otpInputs).map(input => input.value).join('');
+            console.log('Verifying OTP:', otpCode);
+            alert('OTP verified successfully!');
+            window.location.href = 'login.html';
+        });
+
+        console.log('Signup OTP page loaded');
+    </script>
+</body>
+</html>

@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header - Obecno</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="header-container">
+        <div class="header">
+            <div class="header-wrapper">
+                
+                <!-- Left Section - Logo -->
+                <div class="header-left">
+                    <!-- Mobile Menu Button -->
+                    <div class="mobile-menu-button">
+                        <button class="hamburger-btn" aria-label="Toggle mobile menu">
+                            <span class="hamburger-line"></span>
+                            <span class="hamburger-line"></span>
+                            <span class="hamburger-line"></span>
+                        </button>
+                    </div>
+                    
+                    <div class="logo-section">
+                        <img src="assets/Horizontal-Logo.svg" alt="Obecno Logo" class="header-logo">
+                    </div>
+                </div>
+
+                <!-- Center Section - Navigation Menu -->
+                <div class="header-center">
+                    <nav class="navigation-menu">
+                        <div class="menu-item active">
+                            <span class="menu-text">Overview</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="menu-text">Offices & Locations</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="menu-text">Employees</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="menu-text">Reports</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="menu-text">Settings</span>
+                        </div>
+                    </nav>
+                </div>
+                
+                <!-- Right Section - Actions -->
+                <div class="header-right">
+                    <button class="action-button add-button">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    
+                    <div class="notifications-section">
+                        <button class="action-button notification-button">
+                            <i class="fas fa-bell"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="user-profile">
+                        <div class="user-avatar">
+                            <img src="assets/avatars/userimage.png" alt="User Avatar" class="avatar-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Slide-in Menu -->
+        <div class="mobile-menu-overlay"></div>
+        <div class="mobile-menu">
+            <div class="mobile-menu-header">
+                <img src="assets/Horizontal-Logo.svg" alt="Obecno Logo" class="mobile-menu-logo">
+                <button class="mobile-menu-close" aria-label="Close mobile menu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="mobile-navigation">
+                <div class="mobile-menu-item active">
+                    <span class="mobile-menu-text">Overview</span>
+                    <i class="fas fa-chevron-right mobile-menu-arrow"></i>
+                </div>
+                <div class="mobile-menu-item">
+                    <span class="mobile-menu-text">Offices & Locations</span>
+                    <i class="fas fa-chevron-right mobile-menu-arrow"></i>
+                </div>
+                <div class="mobile-menu-item">
+                    <span class="mobile-menu-text">Employees</span>
+                    <i class="fas fa-chevron-right mobile-menu-arrow"></i>
+                </div>
+                <div class="mobile-menu-item">
+                    <span class="mobile-menu-text">Reports</span>
+                    <i class="fas fa-chevron-right mobile-menu-arrow"></i>
+                </div>
+                <div class="mobile-menu-item">
+                    <span class="mobile-menu-text">Settings</span>
+                    <i class="fas fa-chevron-right mobile-menu-arrow"></i>
+                </div>
+            </nav>
+        </div>
+        
+        <!-- Body Content -->
+        <div class="body-content">
+            <div class="overview-content-wrapper">
+                <div class="dashboard-section">
+                    <div class="dashboard-content">
+                        <!-- Widget Stats Section -->
+                        <div class="widget-stats-section">
+                            <div class="widget-stats-grid">
+                                <!-- Present Today Widget -->
+                                <div class="stats-widget present-today-widget">
+                                    <div class="widget-icon">
+                                        <img src="assets/icons/thumbs-up.svg" alt="Users" class="widget-icon-svg">
+                                    </div>
+                                    <div class="widget-content">
+                                        <div class="widget-label">Present Today</div>
+                                        <div class="widget-value">
+                                            <span class="current-value">0</span>
+                                            <span class="separator">/</span>
+                                            <span class="total-value">01</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Active Widget -->
+                                <div class="stats-widget active-widget">
+                                    <div class="widget-icon">
+                                        <img src="assets/icons/users.svg" alt="Users" class="widget-icon-svg">
+                                    </div>
+                                    <div class="widget-content">
+                                        <div class="widget-label">Active</div>
+                                        <div class="widget-value">
+                                            <span class="current-value">0</span>
+                                        </div>
+                                    </div>
+                                    <div class="widget-action">
+                                        <button class="action-icon-button">
+                                            <img src="assets/icons/arrow-up-right.svg" alt="Arrow" class="action-icon-svg">
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <!-- On Break Widget -->
+                                <div class="stats-widget on-break-widget">
+                                    <div class="widget-icon">
+                                        <img src="assets/icons/mug-hot.svg" alt="Mug Hot" class="widget-icon-svg">
+                                    </div>
+                                    <div class="widget-content">
+                                        <div class="widget-label">On Break</div>
+                                        <div class="widget-value">
+                                            <span class="current-value break-value">0</span>
+                                        </div>
+                                    </div>
+                                    <div class="widget-action">
+                                        <button class="action-icon-button">
+                                            <img src="assets/icons/arrow-up-right.svg" alt="Arrow" class="action-icon-svg">
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Late Check-in Widget -->
+                                <div class="stats-widget late-checkin-widget">
+                                    <div class="widget-icon">
+                                        <img src="assets/icons/alarm-exclamation.svg" alt="Alarm" class="widget-icon-svg">
+                                    </div>
+                                    <div class="widget-content">
+                                        <div class="widget-label">Late </div>
+                                        <div class="widget-value">
+                                            <span class="current-value late-value">0</span>
+                                        </div>
+                                    </div>
+                                    <div class="widget-action">
+                                        <button class="action-icon-button">
+                                            <img src="assets/icons/arrow-up-right.svg" alt="Arrow" class="action-icon-svg">
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <!-- On Leaves Widget -->
+                                <div class="stats-widget on-leaves-widget">
+                                    <div class="widget-icon">
+                                        <img src="assets/icons/calendar-heart.svg" alt="Calendar Heart" class="widget-icon-svg">
+                                    </div>
+                                    <div class="widget-content">
+                                        <div class="widget-label">On Leaves</div>
+                                        <div class="widget-value">
+                                            <span class="current-value leaves-value">0</span>
+                                        </div>
+                                    </div>
+                                    <div class="widget-action">
+                                        <button class="action-icon-button">
+                                            <img src="assets/icons/arrow-up-right.svg" alt="Arrow" class="action-icon-svg">
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Absent Widget -->
+                                <div class="stats-widget absent-widget">
+                                    <div class="widget-icon">
+                                        <img src="assets/icons/user-circle-minus.svg" alt="User Circle Minus" class="widget-icon-svg">
+                                    </div>
+                                    <div class="widget-content">
+                                        <div class="widget-label">Absent</div>
+                                        <div class="widget-value">
+                                            <span class="current-value absent-value">0</span>
+                                        </div>
+                                    </div>
+                                    <div class="widget-action">
+                                        <button class="action-icon-button">
+                                            <img src="assets/icons/arrow-up-right.svg" alt="Arrow" class="action-icon-svg">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Additional Dashboard Sections -->
+                        <div class="dashboard-main-content">
+                            <!-- Center Column - Attendance List -->
+                            <div class="center-column">
+                                <div class="center-column-wrapper">
+                                    <div class="attendance-widget">
+                                    <div class="attendance-header">
+                                        <div class="header-left">
+                                            <div class="attendance-search">
+                                                <div class="search-field">
+                                                    <i class="fas fa-search"></i>
+                                                    <input type="text" placeholder="Search..." class="search-input">
+                                                </div>
+                                            </div>
+                                            <div class="date-filter">
+                                                <div class="date-filter-field" onclick="toggleCalendar()">
+                                                    <i class="fas fa-calendar-day"></i>
+                                                    <span id="date-range-text">20 Oct - Today</span>
+                                                    <i class="fas fa-chevron-down date-arrow" id="date-arrow"></i>
+                                                </div>
+                                                <div class="calendar-dropdown" id="calendar-dropdown">
+                                                    <div class="calendar-header">
+                                                        <button class="calendar-nav-btn" onclick="changeMonth(-1)">
+                                                            <i class="fas fa-chevron-left"></i>
+                                                        </button>
+                                                        <span class="calendar-month-year" id="calendar-month-year">October 2024</span>
+                                                        <button class="calendar-nav-btn" onclick="changeMonth(1)">
+                                                            <i class="fas fa-chevron-right"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="calendar-grid">
+                                                        <div class="calendar-weekdays">
+                                                            <div class="calendar-weekday">Sun</div>
+                                                            <div class="calendar-weekday">Mon</div>
+                                                            <div class="calendar-weekday">Tue</div>
+                                                            <div class="calendar-weekday">Wed</div>
+                                                            <div class="calendar-weekday">Thu</div>
+                                                            <div class="calendar-weekday">Fri</div>
+                                                            <div class="calendar-weekday">Sat</div>
+                                                        </div>
+                                                        <div class="calendar-days" id="calendar-days">
+                                                            <!-- Calendar days will be generated by JavaScript -->
+                                                        </div>
+                                                    </div>
+                                                    <div class="calendar-actions">
+                                                        <button class="calendar-action-btn" onclick="selectDateRange('today')">Today</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="header-right">
+                                            <div class="location-filter">
+                                                <div class="filter-field">
+                                                    <span class="filter-text">All Locations</span>
+                                                    <i class="fas fa-chevron-down filter-arrow" id="location-arrow"></i>
+                                                </div>
+                                                <div class="location-dropdown" id="location-dropdown">
+                                                    <div class="dropdown-item" data-value="All Locations">All Locations</div>
+                                                    <div class="dropdown-item" data-value="Main Office">Main Office</div>
+                                                    <div class="dropdown-item" data-value="Branch Office">Branch Office</div>
+                                                    <div class="dropdown-item" data-value="Remote">Remote</div>
+                                                </div>
+                                            </div>
+                                            <div class="filters-dropdown">
+                                                <div class="filter-field">
+                                                    <span class="filter-text">Filters</span>
+                                                    <i class="fas fa-chevron-down filter-arrow" id="filters-arrow"></i>
+                                                </div>
+                                                <div class="filters-dropdown-menu" id="filters-dropdown-menu">
+                                                    <div class="dropdown-item" data-value="All">All Status</div>
+                                                    <div class="dropdown-item" data-value="Present">Present</div>
+                                                    <div class="dropdown-item" data-value="On Break">On Break</div>
+                                                    <div class="dropdown-item" data-value="Late">Late</div>
+                                                    <div class="dropdown-item" data-value="Checked Out">Checked Out</div>
+                                                    <div class="dropdown-item" data-value="On Leave">On Leave</div>
+                                                    <div class="dropdown-item" data-value="Working">Working</div>
+                                                    <div class="dropdown-item" data-value="No Show">No Show / Absent</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Teams Tags Section -->
+                                    <div class="teams-section">
+                                        <div class="teams-tags">
+                                            <div class="team-tag active">
+                                                <span>All Teams</span>
+                                            </div>
+                                            <div class="team-tag">
+                                                <span>Sales Team</span>
+                                            </div>
+                                            <div class="team-tag">
+                                                <span>HR</span>
+                                            </div>
+                                            <div class="team-tag">
+                                                <span>Accounts</span>
+                                            </div>
+                                            <div class="team-tag">
+                                                <span>Management</span>
+                                            </div>
+                                            <div class="team-tag">
+                                                <span>Operations</span>
+                                            </div>
+                                            <div class="team-tag">
+                                                <span>Customer Support</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="attendance-content">
+                                        <!-- Attendance List Items -->
+                                        <div class="attendance-list">
+                                            <div class="attendance-list-item">
+                                                <div class="employee-info">
+                                                    <div class="employee-name">
+                                                        <span class="name">Armando Predovic</span>
+                                                        <div class="status-indicator">
+                                                            <div class="status-dot"></div>
+                                                        </div>
+                                                        <span class="team">[Team]</span>
+                                                    </div>
+                                                </div>
+                                                <div class="edit-icon">
+                                                    <img src="assets/icons/edit-icon.svg" alt="Edit" class="edit-icon-svg">
+                                                </div>
+                                                <div class="employee-status">
+                                                    <div class="status-badge">
+                                                        <span>-</span>
+                                                    </div>
+                                                </div>
+                                                <div class="employee-actions">
+                                                    <button class="action-btn">
+                                                        <i class="fas fa-chevron-right"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="attendance-list-item expanded">
+                                                <div class="employee-info">
+                                                    <div class="employee-name">
+                                                        <span class="name">Armando Predovic</span>
+                                                        <div class="status-indicator">
+                                                            <div class="status-dot"></div>
+                                                        </div>
+                                                        <span class="team">[Team]</span>
+                                                    </div>
+                                                </div>
+                                                <div class="edit-icon">
+                                                    <img src="assets/icons/edit-icon.svg" alt="Edit" class="edit-icon-svg">
+                                                </div>
+                                                <div class="employee-details">
+                                                    <span class="date-range">20 Oct - 25 Oct, 2025</span>
+                                                    <div class="status-indicator">
+                                                        <div class="status-dot"></div>
+                                                    </div>
+                                                    <span class="duration">5 Days</span>
+                                                    <div class="status-indicator">
+                                                        <div class="status-dot"></div>
+                                                    </div>
+                                                    <span class="leave-type">Vacation</span>
+                                                </div>
+                                                <div class="employee-status">
+                                                    <div class="status-badge on-leave">
+                                                        <span>On Leave</span>
+                                                    </div>
+                                                </div>
+                                                <div class="employee-actions">
+                                                    <button class="action-btn">
+                                                        <i class="fas fa-chevron-right"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="attendance-list-item time-tracking">
+                                                <div class="employee-info">
+                                                    <div class="employee-name">
+                                                        <span class="name">Armando Predovic</span>
+                                                        <div class="status-indicator">
+                                                            <div class="status-dot"></div>
+                                                        </div>
+                                                        <span class="team">[Team]</span>
+                                                    </div>
+                                                </div>
+                                                <div class="edit-icon">
+                                                    <img src="assets/icons/edit-icon.svg" alt="Edit" class="edit-icon-svg">
+                                                </div>
+                                                <div class="alert-icon">
+                                                    <img src="assets/icons/circle-exclamation.svg" alt="Alert" class="alert-icon-svg">
+                                                </div>
+                                                <div class="time-details">
+                                                    <span class="check-in-time">09:10 AM</span>
+                                                    <div class="time-range">
+                                                        <div class="time-icon-left">
+                                                            <img src="assets/icons/fa-circle-left.svg" alt="Time Start" class="time-icon-svg">
+                                                        </div>
+                                                        <span class="duration">7h 57m</span>
+                                                        <div class="time-icon-right">
+                                                            <img src="assets/icons/fa-circle-right.svg" alt="Time End" class="time-icon-svg">
+                                                        </div>
+                                                    </div>
+                                                    <span class="check-out-time">05:07 PM</span>
+                                                </div>
+                                                <div class="employee-status">
+                                                    <div class="status-badge checked-out">
+                                                        <span>Checked Out</span>
+                                                    </div>
+                                                </div>
+                                                <div class="employee-actions">
+                                                    <button class="action-btn">
+                                                        <i class="fas fa-chevron-right"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="attendance-list-item working">
+                                                <div class="employee-info">
+                                                    <div class="employee-name">
+                                                        <span class="name">Armando Predovic</span>
+                                                        <div class="status-indicator">
+                                                            <div class="status-dot"></div>
+                                                        </div>
+                                                        <span class="team">[Team]</span>
+                                                    </div>
+                                                </div>
+                                                <div class="edit-icon">
+                                                    <img src="assets/icons/edit-icon.svg" alt="Edit" class="edit-icon-svg">
+                                                </div>
+                                                <div class="alert-icon">
+                                                    <img src="assets/icons/triangle-exclamation.svg" alt="Alert" class="alert-icon-svg">
+                                                </div>
+                                                <div class="time-details">
+                                                    <span class="check-in-time">09:10 AM</span>
+                                                    <div class="time-range">
+                                                        <div class="time-icon-left">
+                                                            <img src="assets/icons/fa-circle-left.svg" alt="Time Start" class="time-icon-svg">
+                                                        </div>
+                                                        <span class="duration">7h 57m</span>
+                                                        <div class="time-icon-right">
+                                                            <img src="assets/icons/fa-circle-right.svg" alt="Time End" class="time-icon-svg">
+                                                        </div>
+                                                    </div>
+                                                    <span class="check-out-time">--:-- PM</span>
+                                                </div>
+                                                <div class="employee-status">
+                                                    <div class="status-badge working">
+                                                        <span>Working</span>
+                                                    </div>
+                                                </div>
+                                                <div class="employee-actions">
+                                                    <button class="action-btn">
+                                                        <i class="fas fa-chevron-right"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="attendance-list-item on-break">
+                                                <div class="employee-info">
+                                                    <div class="employee-name">
+                                                        <span class="name">Armando Predovic</span>
+                                                        <div class="status-indicator">
+                                                            <div class="status-dot"></div>
+                                                        </div>
+                                                        <span class="team">[Team]</span>
+                                                    </div>
+                                                </div>
+                                                <div class="edit-icon">
+                                                    <img src="assets/icons/edit-icon.svg" alt="Edit" class="edit-icon-svg">
+                                                </div>
+                                                <div class="alert-icon">
+                                                    <img src="assets/icons/triangle-exclamation-red.svg" alt="Alert" class="alert-icon-svg">
+                                                </div>
+                                                <div class="time-details">
+                                                    <span class="check-in-time">09:10 AM</span>
+                                                    <div class="time-range">
+                                                        <div class="time-icon-left">
+                                                            <img src="assets/icons/fa-circle-left.svg" alt="Time Start" class="time-icon-svg">
+                                                        </div>
+                                                        <span class="duration">7h 57m</span>
+                                                        <div class="time-icon-right">
+                                                            <img src="assets/icons/fa-circle-right.svg" alt="Time End" class="time-icon-svg">
+                                                        </div>
+                                                    </div>
+                                                    <span class="check-out-time">--:-- PM</span>
+                                                </div>
+                                                <div class="employee-status">
+                                                    <div class="status-badge on-break">
+                                                        <span>On Break</span>
+                                                    </div>
+                                                </div>
+                                                <div class="employee-actions">
+                                                    <button class="action-btn">
+                                                        <i class="fas fa-chevron-right"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="attendance-list-item late">
+                                                <div class="employee-info">
+                                                    <div class="employee-name">
+                                                        <span class="name">Armando Predovic</span>
+                                                        <div class="status-indicator">
+                                                            <div class="status-dot"></div>
+                                                        </div>
+                                                        <span class="team">[Team]</span>
+                                                    </div>
+                                                </div>
+                                                <div class="edit-icon">
+                                                    <img src="assets/icons/edit-icon.svg" alt="Edit" class="edit-icon-svg">
+                                                </div>
+                                                <div class="alert-icon">
+                                                    <img src="assets/icons/location-exclamation.svg" alt="Alert" class="alert-icon-svg">
+                                                </div>
+                                                <div class="time-details">
+                                                    <span class="check-in-time late-time">09:40 AM</span>
+                                                    <div class="time-range">
+                                                        <div class="time-icon-left">
+                                                            <img src="assets/icons/fa-circle-left.svg" alt="Time Start" class="time-icon-svg">
+                                                        </div>
+                                                        <span class="duration">7h 17m</span>
+                                                        <div class="time-icon-right">
+                                                            <img src="assets/icons/fa-circle-right.svg" alt="Time End" class="time-icon-svg">
+                                                        </div>
+                                                    </div>
+                                                    <span class="check-out-time">--:-- PM</span>
+                                                </div>
+                                                <div class="employee-status">
+                                                    <div class="status-badge late">
+                                                        <span>Late</span>
+                                                    </div>
+                                                </div>
+                                                <div class="employee-actions">
+                                                    <button class="action-btn">
+                                                        <i class="fas fa-chevron-right"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Pagination -->
+                                        <div class="pagination-section">
+                                            <div class="pagination">
+                                                <button class="pagination-btn prev-btn">
+                                                    <i class="fas fa-chevron-left"></i>
+                                                </button>
+                                                <button class="pagination-page active">01</button>
+                                                <button class="pagination-page">02</button>
+                                                <button class="pagination-page">03</button>
+                                                <button class="pagination-page">04</button>
+                                                <button class="pagination-page">...</button>
+                                                <button class="pagination-page">12</button>
+                                                <button class="pagination-btn next-btn">
+                                                    <i class="fas fa-chevron-right"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="add-employee-section">
+                                            <button class="add-employee-btn">
+                                                <i class="fas fa-plus"></i>
+                                                <span>Add Employee</span>
+                                            </button>
+                                        </div>
+                                        
+                                        
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Right Column - Sidebar Widgets -->
+                            <div class="right-column">
+                                <!-- Complete Setup Widget -->
+                                <div class="setup-widget">
+                                    <div class="setup-header">
+                                        <h3 class="setup-title">Complete Setup</h3>
+                                        <span class="setup-progress">2/6 Completed</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill"></div>
+                                    </div>
+                                    <div class="setup-actions">
+                                        <button class="dismiss-button">
+                                            <i class="fas fa-check"></i>
+                                            <span>Complete & dismiss</span>
+                                        </button>
+                                        <button class="setup-continue-button">
+                                            <span>Continue</span>
+                                            <i class="fas fa-chevron-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Alerts Widget -->
+                                <div class="alerts-widget">
+                                    <div class="alerts-header">
+                                        <div class="alerts-title-section">
+                                            <h3 class="alerts-title">Alerts</h3>
+                                            <div class="alert-badge">06</div>
+                                        </div>
+                                        <button class="view-all-button">
+                                            <span>View All</span>
+                                            <i class="fas fa-chevron-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Leave Requests Widget -->
+                                <div class="leave-requests-widget">
+                                    <div class="leave-header">
+                                        <h3 class="leave-title">Leave Requests</h3>
+                                        <button class="view-all-button">
+                                            <span>View All</span>
+                                            <i class="fas fa-chevron-right"></i>
+                                        </button>
+                                    </div>
+                                    <div class="leave-content">
+                                        <div class="empty-state">
+                                            <i class="fas fa-folder-open"></i>
+                                            <p class="empty-text">No Leave request</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Suggestions Widget -->
+                                <div class="suggestions-widget">
+                                    <div class="suggestions-slider">
+                                        <!-- Slide 1 -->
+                                        <div class="suggestion-slide active">
+                                            <div class="suggestion-icon">
+                                                <i class="fas fa-lightbulb"></i>
+                                            </div>
+                                            <h3 class="suggestion-title">Multiple Locations</h3>
+                                            <p class="suggestion-description">Create as many Offices or Locations you need to track your employees</p>
+                                        </div>
+                                        
+                                        <!-- Slide 2 -->
+                                        <div class="suggestion-slide">
+                                            <div class="suggestion-icon">
+                                                <i class="fas fa-users"></i>
+                                            </div>
+                                            <h3 class="suggestion-title">Team Management</h3>
+                                            <p class="suggestion-description">Easily manage your team members and their attendance across different locations</p>
+                                        </div>
+                                        
+                                        <!-- Slide 3 -->
+                                        <div class="suggestion-slide">
+                                            <div class="suggestion-icon">
+                                                <i class="fas fa-chart-line"></i>
+                                            </div>
+                                            <h3 class="suggestion-title">Analytics & Reports</h3>
+                                            <p class="suggestion-description">Get detailed insights and reports on employee attendance patterns and trends</p>
+                                        </div>
+                                        
+                                        <!-- Slide 4 -->
+                                        <div class="suggestion-slide">
+                                            <div class="suggestion-icon">
+                                                <i class="fas fa-mobile-alt"></i>
+                                            </div>
+                                            <h3 class="suggestion-title">Mobile App</h3>
+                                            <p class="suggestion-description">Download our mobile app for easy check-in and check-out on the go</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Slider Controls -->
+                                    <div class="suggestion-dots">
+                                        <div class="dot active" data-slide="0"></div>
+                                        <div class="dot" data-slide="1"></div>
+                                        <div class="dot" data-slide="2"></div>
+                                        <div class="dot" data-slide="3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Navigation menu functionality
+        const menuItems = document.querySelectorAll('.menu-item');
+        
+        menuItems.forEach(item => {
+            item.addEventListener('click', function() {
+                // Remove active class from all items
+                menuItems.forEach(menuItem => menuItem.classList.remove('active'));
+                
+                // Add active class to clicked item
+                this.classList.add('active');
+                
+                // Get the menu text for navigation
+                const menuText = this.querySelector('.menu-text').textContent;
+                console.log('Navigating to:', menuText);
+            });
+        });
+
+        // Action buttons functionality
+        const addButton = document.querySelector('.add-button');
+        const notificationButton = document.querySelector('.notification-button');
+        
+        addButton.addEventListener('click', function() {
+            console.log('Add button clicked');
+            // Add functionality here
+        });
+        
+        notificationButton.addEventListener('click', function() {
+            console.log('Notification button clicked');
+            // Notification functionality here
+        });
+
+        // User profile functionality
+        const userProfile = document.querySelector('.user-profile');
+        
+        userProfile.addEventListener('click', function() {
+            console.log('User profile clicked');
+            // User profile dropdown functionality here
+        });
+
+        // Suggestions slider functionality
+        const suggestionSlides = document.querySelectorAll('.suggestion-slide');
+        const suggestionDots = document.querySelectorAll('.dot');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            // Remove active class from all slides and dots
+            suggestionSlides.forEach(slide => slide.classList.remove('active'));
+            suggestionDots.forEach(dot => dot.classList.remove('active'));
+            
+            // Add active class to current slide and dot
+            suggestionSlides[index].classList.add('active');
+            suggestionDots[index].classList.add('active');
+            
+            currentSlide = index;
+        }
+
+        // Add click event listeners to dots
+        suggestionDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+            });
+        });
+
+        // Auto-advance slider every 4 seconds
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % suggestionSlides.length;
+            showSlide(currentSlide);
+        }, 4000);
+
+        // Mobile menu functionality
+        const hamburgerBtn = document.querySelector('.hamburger-btn');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+        const mobileMenuClose = document.querySelector('.mobile-menu-close');
+        const mobileMenuItems = document.querySelectorAll('.mobile-menu-item');
+
+        // Toggle mobile menu
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('active');
+            mobileMenuOverlay.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+            
+            // Animate hamburger button
+            hamburgerBtn.classList.toggle('active');
+        }
+
+        // Close mobile menu
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('active');
+            mobileMenuOverlay.classList.remove('active');
+            document.body.classList.remove('menu-open');
+            hamburgerBtn.classList.remove('active');
+        }
+
+        // Event listeners for mobile menu
+        hamburgerBtn.addEventListener('click', toggleMobileMenu);
+        hamburgerBtn.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            toggleMobileMenu();
+        });
+        
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+        mobileMenuClose.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            closeMobileMenu();
+        });
+        
+        mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+        mobileMenuOverlay.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            closeMobileMenu();
+        });
+
+        // Mobile menu item clicks
+        mobileMenuItems.forEach(item => {
+            const handleItemClick = function() {
+                // Remove active class from all mobile menu items
+                mobileMenuItems.forEach(menuItem => menuItem.classList.remove('active'));
+                
+                // Add active class to clicked item
+                this.classList.add('active');
+                
+                // Update desktop menu as well
+                const menuText = this.querySelector('.mobile-menu-text').textContent;
+                menuItems.forEach(desktopItem => {
+                    if (desktopItem.querySelector('.menu-text').textContent === menuText) {
+                        menuItems.forEach(item => item.classList.remove('active'));
+                        desktopItem.classList.add('active');
+                    }
+                });
+                
+                // Close mobile menu after selection
+                closeMobileMenu();
+                
+                console.log('Mobile navigation to:', menuText);
+            };
+            
+            item.addEventListener('click', handleItemClick);
+            item.addEventListener('touchend', function(e) {
+                e.preventDefault();
+                handleItemClick.call(this);
+            });
+        });
+
+        // Close mobile menu on escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                closeMobileMenu();
+            }
+        });
+
+        // Location and Filters dropdown functionality
+        const locationFilter = document.querySelector('.location-filter .filter-field');
+        const locationDropdown = document.getElementById('location-dropdown');
+        const locationArrow = document.getElementById('location-arrow');
+        const locationItems = document.querySelectorAll('#location-dropdown .dropdown-item');
+
+        const filtersDropdown = document.querySelector('.filters-dropdown .filter-field');
+        const filtersMenu = document.getElementById('filters-dropdown-menu');
+        const filtersArrow = document.getElementById('filters-arrow');
+        const filtersItems = document.querySelectorAll('#filters-dropdown-menu .dropdown-item');
+
+        // Location dropdown functionality
+        locationFilter.addEventListener('click', function() {
+            locationDropdown.classList.toggle('show');
+            locationArrow.classList.toggle('rotated');
+            
+            // Close filters dropdown if open
+            filtersMenu.classList.remove('show');
+            filtersArrow.classList.remove('rotated');
+        });
+
+        locationItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const selectedText = this.textContent;
+                const filterText = locationFilter.querySelector('.filter-text');
+                filterText.textContent = selectedText;
+                
+                locationDropdown.classList.remove('show');
+                locationArrow.classList.remove('rotated');
+                
+                console.log('Location selected:', selectedText);
+            });
+        });
+
+        // Filters dropdown functionality
+        filtersDropdown.addEventListener('click', function() {
+            filtersMenu.classList.toggle('show');
+            filtersArrow.classList.toggle('rotated');
+            
+            // Close location dropdown if open
+            locationDropdown.classList.remove('show');
+            locationArrow.classList.remove('rotated');
+        });
+
+        filtersItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const selectedText = this.textContent;
+                const filterText = filtersDropdown.querySelector('.filter-text');
+                filterText.textContent = selectedText;
+                
+                filtersMenu.classList.remove('show');
+                filtersArrow.classList.remove('rotated');
+                
+                console.log('Filter selected:', selectedText);
+            });
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!locationFilter.contains(event.target)) {
+                locationDropdown.classList.remove('show');
+                locationArrow.classList.remove('rotated');
+            }
+            
+            if (!filtersDropdown.contains(event.target)) {
+                filtersMenu.classList.remove('show');
+                filtersArrow.classList.remove('rotated');
+            }
+            
+            if (!event.target.closest('.date-filter')) {
+                const calendar = document.getElementById('calendar-dropdown');
+                const dateArrow = document.getElementById('date-arrow');
+                if (calendar) {
+                    calendar.classList.remove('show');
+                    dateArrow.classList.remove('rotated');
+                }
+            }
+        });
+
+        // Team tags functionality
+        const teamTags = document.querySelectorAll('.team-tag');
+        
+        teamTags.forEach(tag => {
+            tag.addEventListener('click', function() {
+                // Remove active class from all tags
+                teamTags.forEach(teamTag => teamTag.classList.remove('active'));
+                
+                // Add active class to clicked tag
+                this.classList.add('active');
+                
+                // Get the team name
+                const teamName = this.querySelector('span').textContent;
+                console.log('Team selected:', teamName);
+            });
+        });
+
+        // Calendar functionality
+        let currentDate = new Date();
+        let selectedStartDate = null;
+        let selectedEndDate = null;
+
+        function toggleCalendar() {
+            const calendar = document.getElementById('calendar-dropdown');
+            const arrow = document.getElementById('date-arrow');
+            
+            if (calendar.classList.contains('show')) {
+                calendar.classList.remove('show');
+                arrow.classList.remove('rotated');
+            } else {
+                // Close other dropdowns
+                locationDropdown.classList.remove('show');
+                locationArrow.classList.remove('rotated');
+                filtersMenu.classList.remove('show');
+                filtersArrow.classList.remove('rotated');
+                
+                calendar.classList.add('show');
+                arrow.classList.add('rotated');
+                generateCalendar();
+            }
+        }
+
+        function generateCalendar() {
+            const calendarDays = document.getElementById('calendar-days');
+            const monthYear = document.getElementById('calendar-month-year');
+            
+            const year = currentDate.getFullYear();
+            const month = currentDate.getMonth();
+            
+            monthYear.textContent = currentDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+            
+            const firstDay = new Date(year, month, 1);
+            const lastDay = new Date(year, month + 1, 0);
+            const startDate = new Date(firstDay);
+            startDate.setDate(startDate.getDate() - firstDay.getDay());
+            
+            calendarDays.innerHTML = '';
+            
+            for (let i = 0; i < 42; i++) {
+                const date = new Date(startDate);
+                date.setDate(startDate.getDate() + i);
+                
+                const dayElement = document.createElement('div');
+                dayElement.className = 'calendar-day';
+                dayElement.textContent = date.getDate();
+                dayElement.onclick = () => selectDate(date);
+                
+                if (date.getMonth() !== month) {
+                    dayElement.classList.add('other-month');
+                }
+                
+                if (date.toDateString() === new Date().toDateString()) {
+                    dayElement.classList.add('today');
+                }
+                
+                if (selectedStartDate && date.toDateString() === selectedStartDate.toDateString()) {
+                    dayElement.classList.add('selected');
+                }
+                
+                calendarDays.appendChild(dayElement);
+            }
+        }
+
+        function changeMonth(direction) {
+            currentDate.setMonth(currentDate.getMonth() + direction);
+            generateCalendar();
+        }
+
+        function selectDate(date) {
+            selectedStartDate = date;
+            selectedEndDate = null;
+            
+            updateDateRangeText();
+            generateCalendar();
+            
+            // Close calendar after selection
+            const calendar = document.getElementById('calendar-dropdown');
+            const dateArrow = document.getElementById('date-arrow');
+            calendar.classList.remove('show');
+            dateArrow.classList.remove('rotated');
+        }
+
+        function updateDateRangeText() {
+            const dateRangeText = document.getElementById('date-range-text');
+            
+            if (selectedStartDate) {
+                const dateStr = selectedStartDate.toLocaleDateString('en-US', { day: 'numeric', month: 'short' });
+                dateRangeText.textContent = dateStr;
+            } else {
+                dateRangeText.textContent = '20 Oct - Today';
+            }
+        }
+
+        function selectDateRange(range) {
+            const today = new Date();
+            
+            if (range === 'today') {
+                selectedStartDate = new Date(today);
+                selectedEndDate = null;
+            }
+            
+            updateDateRangeText();
+            generateCalendar();
+            
+            // Close calendar
+            const calendar = document.getElementById('calendar-dropdown');
+            const dateArrow = document.getElementById('date-arrow');
+            calendar.classList.remove('show');
+            dateArrow.classList.remove('rotated');
+        }
+
+        // Attendance list item functionality
+        const attendanceListItems = document.querySelectorAll('.attendance-list-item');
+        
+        attendanceListItems.forEach(item => {
+            item.addEventListener('click', function() {
+                console.log('Attendance item clicked');
+                // Add functionality for expanding/collapsing employee details
+            });
+        });
+
+        // Action button functionality
+        const actionButtons = document.querySelectorAll('.action-btn');
+        
+        actionButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.stopPropagation(); // Prevent triggering the parent item click
+                console.log('Action button clicked');
+                // Add functionality for employee actions
+            });
+        });
+
+        // Edit icon functionality
+        const editIcons = document.querySelectorAll('.edit-icon');
+        
+        editIcons.forEach(icon => {
+            icon.addEventListener('click', function(e) {
+                e.stopPropagation(); // Prevent triggering the parent item click
+                console.log('Edit icon clicked');
+                // Add functionality for editing employee details
+            });
+        });
+
+        // Alert icon functionality
+        const alertIcons = document.querySelectorAll('.alert-icon');
+        
+        alertIcons.forEach(icon => {
+            icon.addEventListener('click', function(e) {
+                e.stopPropagation(); // Prevent triggering the parent item click
+                console.log('Alert icon clicked');
+                // Add functionality for viewing alerts or notifications
+            });
+        });
+
+        console.log('Header component loaded');
+    </script>
+</body>
+</html>

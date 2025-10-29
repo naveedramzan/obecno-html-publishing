@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Obecno</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Arvo:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="signup-page">
+        <div class="body">
+            <div class="wrapper">
+                <div class="signup-section">
+                    <div class="signup-container">
+                        <div class="signup-form">
+                            <div class="form-content">
+                                <!-- Logo -->
+                                <div class="logo-container">
+                                    <img src="assets/signup-logo.svg" alt="Obecno Logo" class="logo">
+                                </div>
+                                
+                                <!-- Header section -->
+                                <div class="header-section">
+                                    <h2 class="signup-title">Get Started with <span class="primary-o">o</span>becno</h2>
+                                    <p class="signup-description">Set up the main account with the owner's information.</p>
+                                </div>
+                                
+                            <!-- Email Field -->
+                            <div class="text-field">
+                                <div class="label">
+                                    <span class="field-label">Email</span>
+                                    <span class="required-asterisk">*</span>
+                                </div>
+                                <div class="field" id="email-field">
+                                    <i class="fas fa-envelope field-icon"></i>
+                                    <input type="email" class="input-text" id="email-input" placeholder="Enter your email">
+                                </div>
+                            </div>
+                            
+                            
+                            <!-- Continue Button -->
+                            <button class="continue-button" id="continue-button" disabled>
+                                <span class="button-text">Continue</span>
+                            </button>
+                            
+                            <!-- Or Divider -->
+                            <div class="or-divider">
+                                <div class="divider-line"></div>
+                                <span class="or-text">or</span>
+                                <div class="divider-line"></div>
+                            </div>
+                            
+                            <!-- Continue with Google Button -->
+                            <button class="google-button" id="google-button">
+                                <i class="fab fa-google google-icon"></i>
+                                <span class="button-text">Continue with Google</span>
+                            </button>
+                            
+                            <!-- Terms Statement -->
+                            <div class="terms-statement">
+                                <span class="terms-text">By signing up, you agree to the </span>
+                                <a href="#" class="terms-link">Terms of Service</a>
+                                <span class="terms-text"> and </span>
+                                <a href="#" class="terms-link">Privacy Policy</a>
+                                <span class="terms-text">.</span>
+                            </div>
+                            
+                            <!-- Need Help Section -->
+                            <div class="help-section">
+                                <span class="help-text">Need help?</span>
+                                <a href="#" class="contact-support-link">Contact Support</a>
+                            </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Promotion Graphics -->
+                        <div class="promotion-graphics">
+                            <div class="promotion-content">
+                                <h2 class="promotion-title">Attendance Simplified</h2>
+                                <p class="promotion-description">Track attendance across all locations or remote teams in one clear, organized view.</p>
+                                <div class="phone-mockup">
+                                    <img src="assets/phone-image-updated-56586a.png" alt="Obecno App Preview" class="phone-image">
+                                </div>
+                                <p class="app-availability">Apps Available on Apple & Android Devices</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Form elements
+        const emailInput = document.getElementById('email-input');
+        const continueButton = document.getElementById('continue-button');
+        
+        const emailField = document.getElementById('email-field');
+
+
+        // Field focus handlers
+        const fields = [
+            { input: emailInput, field: emailField }
+        ];
+
+        fields.forEach(({ input, field }) => {
+            input.addEventListener('focus', function() {
+                field.classList.add('active');
+            });
+
+            input.addEventListener('blur', function() {
+                if (!this.value) {
+                    field.classList.remove('active');
+                }
+            });
+
+            input.addEventListener('input', function() {
+                if (this.value) {
+                    field.classList.add('active');
+                }
+            });
+        });
+
+        // Form validation
+        function validateForm() {
+            const email = emailInput.value.trim();
+
+            const isEmailValid = email.includes('@') && email.length > 0;
+
+            const allValid = isEmailValid;
+            
+            continueButton.disabled = !allValid;
+        }
+
+        // Event listeners for validation
+        emailInput.addEventListener('input', validateForm);
+
+        // Continue button
+        continueButton.addEventListener('click', function() {
+            console.log('Sign up form submitted');
+            alert('Account created successfully!');
+            window.location.href = 'login.html';
+        });
+
+        // Google button
+        const googleButton = document.getElementById('google-button');
+        googleButton.addEventListener('click', function() {
+            console.log('Continue with Google clicked');
+            alert('Google signup functionality would be implemented here');
+            // window.location.href = 'login.html';
+        });
+
+        console.log('Signup page loaded');
+    </script>
+</body>
+</html>

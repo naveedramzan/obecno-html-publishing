@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Obecno</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Arvo:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="signup-2-page">
+    <div class="signup-page">
+        <div class="body">
+            <div class="wrapper">
+                <div class="signup-section">
+                    <div class="signup-container">
+                        <div class="signup-form">
+                            <div class="form-content">
+                                <!-- Logo -->
+                                <div class="logo-container">
+                                    <img src="assets/signup-logo.svg" alt="Obecno Logo" class="logo">
+                                </div>
+                                
+                                <!-- Header section -->
+                                <div class="header-section">
+                                    <h2 class="signup-title">Let's Get You All Set Up!</h2>
+                                    <p class="signup-description">Just a few quick steps to finish setting up your account. This helps us tailor everything perfectly for you.</p>
+                                </div>
+                                
+                                <!-- Office/Location Name Field -->
+                                <div class="text-field">
+                                    <div class="label">
+                                        <span class="field-label">Office / Location Name</span>
+                                        <span class="required-asterisk">*</span>
+                                    </div>
+                                    <div class="field" id="location-field">
+                                        <input type="text" class="input-text" id="location-input" placeholder="Station One">
+                                    </div>
+                                </div>
+                                
+                                <!-- Setup Options List -->
+                                <div class="setup-options">
+                                    <div class="setup-option">
+                                        <input type="checkbox" class="option-checkbox" id="option-1">
+                                        <label for="option-1" class="option-text">Set up Location</label>
+                                        <i class="fas fa-chevron-right option-arrow"></i>
+                                    </div>
+                                    <div class="setup-option">
+                                        <input type="checkbox" class="option-checkbox" id="option-2">
+                                        <label for="option-2" class="option-text">Clock in Limite</label>
+                                        <i class="fas fa-chevron-right option-arrow"></i>
+                                    </div>
+                                    <div class="setup-option">
+                                        <input type="checkbox" class="option-checkbox" id="option-3">
+                                        <label for="option-3" class="option-text">Set Timing</label>
+                                        <i class="fas fa-chevron-right option-arrow"></i>
+                                    </div>
+                                    <div class="setup-option">
+                                        <input type="checkbox" class="option-checkbox" id="option-4">
+                                        <label for="option-4" class="option-text">Working Days</label>
+                                        <i class="fas fa-chevron-right option-arrow"></i>
+                                    </div>
+                                    <div class="setup-option">
+                                        <input type="checkbox" class="option-checkbox" id="option-5">
+                                        <label for="option-5" class="option-text">Break Timing</label>
+                                        <i class="fas fa-chevron-right option-arrow"></i>
+                                    </div>
+                                    <div class="setup-option">
+                                        <input type="checkbox" class="option-checkbox" id="option-6">
+                                        <label for="option-6" class="option-text">Holidays</label>
+                                        <i class="fas fa-chevron-right option-arrow"></i>
+                                    </div>
+                                    <div class="setup-option">
+                                        <input type="checkbox" class="option-checkbox" id="option-7">
+                                        <label for="option-7" class="option-text">Leaves</label>
+                                        <i class="fas fa-chevron-right option-arrow"></i>
+                                    </div>
+                                </div>
+                                
+                                <!-- Buttons -->
+                                <div class="button-group">
+                                    <button class="skip-button" id="skip-button">
+                                        <span class="button-text">Skip</span>
+                                    </button>
+                                    <button class="continue-button" id="continue-button">
+                                        <span class="button-text">Continue</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Promotion Graphics -->
+                        <div class="promotion-graphics">
+                            <div class="promotion-content">
+                                <h2 class="promotion-title">Attendance Simplified</h2>
+                                <p class="promotion-description">Track attendance across all locations or remote teams in one clear, organized view.</p>
+                                <div class="phone-mockup">
+                                    <img src="assets/phone-image-updated-56586a.png" alt="Obecno App Preview" class="phone-image">
+                                </div>
+                                <p class="app-availability">Apps Available on Apple & Android Devices</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Form elements
+        const locationInput = document.getElementById('location-input');
+        const continueButton = document.getElementById('continue-button');
+        const skipButton = document.getElementById('skip-button');
+        const locationField = document.getElementById('location-field');
+
+        // Field focus handlers
+        locationInput.addEventListener('focus', function() {
+            locationField.classList.add('active');
+        });
+
+        locationInput.addEventListener('blur', function() {
+            if (!this.value) {
+                locationField.classList.remove('active');
+            }
+        });
+
+        locationInput.addEventListener('input', function() {
+            if (this.value) {
+                locationField.classList.add('active');
+            }
+        });
+
+        // Setup options checkbox handlers
+        const checkboxes = document.querySelectorAll('.option-checkbox');
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const optionText = this.nextElementSibling.textContent;
+                if (this.checked) {
+                    console.log('Setup option selected:', optionText);
+                    // Here you would navigate to the specific setup page
+                    alert(`Setting up: ${optionText}`);
+                } else {
+                    console.log('Setup option deselected:', optionText);
+                }
+            });
+        });
+
+        // Skip button
+        skipButton.addEventListener('click', function() {
+            console.log('Skip setup clicked');
+            alert('Setup skipped!');
+            window.location.href = 'login.html';
+        });
+
+        // Continue button
+        continueButton.addEventListener('click', function() {
+            const location = locationInput.value.trim();
+            if (location) {
+                console.log('Continue setup with location:', location);
+                alert('Setup completed!');
+                window.location.href = 'login.html';
+            } else {
+                alert('Please enter a location name');
+            }
+        });
+
+        console.log('Signup-2 page loaded');
+    </script>
+</body>
+</html>
