@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Obecno</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="master-page">
+        <div class="body">
+            <div class="wrapper">
+                <div class="login-section">
+                    <div class="login-container">
+                        <div class="login-box">
+                            <!-- Logo -->
+                            <div class="logo-container">
+                                <img src="assets/logo.svg" alt="Obecno Logo" class="logo">
+                            </div>
+                            
+                            <!-- Login form -->
+                            <div class="form-section">
+                                <h2 class="login-title">Sign in to your account</h2>
+                                
+                                <div class="form-container">
+                                    <div class="text-field">
+                                        <div class="label">
+                                            <span class="field-label">Email / Phone / ID</span>
+                                        </div>
+                                        <div class="field" id="input-field">
+                                            <input type="text" class="input-text" id="email-input" placeholder="Enter your email, phone, or ID">
+                                            <i class="fas fa-circle-check success-icon" style="display: none;"></i>
+                                        </div>
+                                        <div class="field-message" id="field-message" style="display: none;"></div>
+                                    </div>
+                                    
+                                    <button class="continue-button">
+                                        <span class="button-text">Continue</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Sign up section -->
+                        <div class="signup-section">
+                            <span class="signup-text">Don't have an account ?</span>
+                            <button class="get-started-button">
+                                <span class="button-text">Get Started</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Input field state management
+        const emailInput = document.getElementById('email-input');
+        const inputField = document.getElementById('input-field');
+        const fieldMessage = document.getElementById('field-message');
+        const successIcon = document.querySelector('.success-icon');
+
+        // Remove all state classes
+        function clearStates() {
+            inputField.classList.remove('default', 'active', 'error', 'success', 'disabled');
+            fieldMessage.style.display = 'none';
+            successIcon.style.display = 'none';
+        }
+
+        // Set field state
+        function setFieldState(state, message = '') {
+            clearStates();
+            inputField.classList.add(state);
+            
+            if (message) {
+                fieldMessage.textContent = message;
+                fieldMessage.style.display = 'block';
+            }
+            
+            if (state === 'success') {
+                successIcon.style.display = 'inline';
+            }
+        }
+
+        // Input focus handler
+        emailInput.addEventListener('focus', function() {
+            setFieldState('active');
+        });
+
+        // Input blur handler with validation
+        emailInput.addEventListener('blur', function() {
+            const value = this.value.trim();
+            
+            if (!value) {
+                setFieldState('error', 'Email cannot be blank');
+            } else if (value.includes('@') || value.length >= 3) {
+                setFieldState('success', 'You are on right track');
+            } else {
+                setFieldState('default');
+            }
+        });
+
+        // Input change handler
+        emailInput.addEventListener('input', function() {
+            const value = this.value.trim();
+            
+            if (value.length > 0) {
+                if (value.includes('@') || value.length >= 3) {
+                    setFieldState('success', 'You are on right track');
+                } else {
+                    setFieldState('active');
+                }
+            } else {
+                setFieldState('active');
+            }
+        });
+
+        // Continue button click handler
+        const continueButton = document.querySelector('.continue-button');
+        continueButton.addEventListener('click', function() {
+            const email = emailInput.value.trim();
+            
+            if (!email) {
+                setFieldState('error', 'Email cannot be blank');
+                return;
+            }
+            
+            if (!email.includes('@') && email.length < 3) {
+                setFieldState('error', 'Please enter a valid email, phone, or ID');
+                return;
+            }
+            
+            // Store email for password page
+            localStorage.setItem('userEmail', email);
+            
+            // Navigate to password page
+            window.location.href = 'password.html';
+        });
+
+        // Get Started button click handler
+        const getStartedButton = document.querySelector('.get-started-button');
+        getStartedButton.addEventListener('click', function() {
+            // Navigate to sign up page
+            console.log('Navigate to sign up page');
+            window.location.href = 'Signup-1-A.html';
+        });
+    </script>
+</body>
+</html>
